@@ -1,11 +1,11 @@
 import { ServiceType } from "./ServiceType";
 import { ServiceYear } from "./ServiceYear";
 import { PriceForServiceTypeInYear } from "./PriceForServiceTypeInYear";
-import { injectable, inject } from 'tsyringe';
+import { singleton , inject } from 'tsyringe';
 import { IPricesForServiceInYears } from "./IPricesForServiceInYears";
 import { IPossibleOperationsForServices } from "./IPossibleOperationsForServices";
 
-@injectable()
+@singleton()
 export class PossibleOperationsForServices implements IPossibleOperationsForServices {
 
     constructor(@inject('IPricesForServiceInYears') private _pricesForServices: IPricesForServiceInYears) {
